@@ -1,5 +1,12 @@
 class CatalogModal {
   static List<Item> items = [];
+
+  //Get Item By ID
+  static Item getById(int id) =>
+      items.firstWhere((element) => element.id == id, orElse: null);
+
+  //Get Item by Position
+  static Item getByPosition(int pos) => items[pos];
   // [
   //   Item(
   //       id: 1,
