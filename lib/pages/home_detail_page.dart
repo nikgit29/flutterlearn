@@ -14,22 +14,25 @@ class HomeDetailPage extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.transparent,
         ),
-        backgroundColor: MyTheme.creamColor,
-        bottomNavigationBar: ButtonBar(
-          alignment: MainAxisAlignment.spaceBetween,
-          buttonPadding: EdgeInsets.zero,
-          children: [
-            "\$${catalog.price}".text.xl4.red800.bold.make(),
-            ElevatedButton(
-              onPressed: () {},
-              style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStateProperty.all(MyTheme.darkBluishColor),
-                  shape: MaterialStateProperty.all(StadiumBorder())),
-              child: "Add to Cart".text.make(),
-            ).wh(120, 50)
-          ],
-        ).p20(),
+        backgroundColor: context.canvasColor,
+        bottomNavigationBar: Container(
+          color: context.cardColor,
+          child: ButtonBar(
+            alignment: MainAxisAlignment.spaceBetween,
+            buttonPadding: EdgeInsets.zero,
+            children: [
+              "\$${catalog.price}".text.xl4.red800.bold.make(),
+              ElevatedButton(
+                onPressed: () {},
+                style: ButtonStyle(
+                    backgroundColor:
+                        MaterialStateProperty.all(context.theme.buttonColor),
+                    shape: MaterialStateProperty.all(StadiumBorder())),
+                child: "Add to Cart".text.make(),
+              ).wh(120, 50),
+            ],
+          ).p8(),
+        ),
         body: SafeArea(
           bottom: false,
           child: Column(
@@ -44,19 +47,19 @@ class HomeDetailPage extends StatelessWidget {
                   arcType: VxArcType.CONVEY,
                   edge: VxEdge.TOP,
                   child: Container(
-                    color: Colors.white,
+                    color: context.cardColor,
                     width: context.screenWidth,
                     child: Column(
                       children: [
                         catalog.name.text.xl4
-                            .color(MyTheme.darkBluishColor)
+                            .color(context.accentColor)
                             .bold
                             .make(),
                         catalog.desc.text.size(10).xl.make(),
                         10.heightBox,
                         "Prieghi sono delle sí sí fragilita di merito 'l piú sia, siamo donne ingannati segreto cospetto i, da mortali non suoi e, 'l siamo che da la grazia. Verso nome di esser intendo cosa viviamo, cosa e da' i noi in. Etterno segreto noi oportune ciascheduna la sempre dio che."
                             .text
-                            .color(MyTheme.darkBluishColor)
+                            .color(context.accentColor)
                             .make()
                             .p16()
                       ],
