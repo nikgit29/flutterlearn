@@ -11,7 +11,9 @@ class HomeDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(),
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+        ),
         backgroundColor: MyTheme.creamColor,
         bottomNavigationBar: ButtonBar(
           alignment: MainAxisAlignment.spaceBetween,
@@ -24,8 +26,8 @@ class HomeDetailPage extends StatelessWidget {
                   backgroundColor:
                       MaterialStateProperty.all(MyTheme.darkBluishColor),
                   shape: MaterialStateProperty.all(StadiumBorder())),
-              child: "Buy".text.make(),
-            ).wh(100, 50)
+              child: "Add to Cart".text.make(),
+            ).wh(120, 50)
           ],
         ).p20(),
         body: SafeArea(
@@ -52,6 +54,11 @@ class HomeDetailPage extends StatelessWidget {
                             .make(),
                         catalog.desc.text.size(10).xl.make(),
                         10.heightBox,
+                        "Prieghi sono delle sí sí fragilita di merito 'l piú sia, siamo donne ingannati segreto cospetto i, da mortali non suoi e, 'l siamo che da la grazia. Verso nome di esser intendo cosa viviamo, cosa e da' i noi in. Etterno segreto noi oportune ciascheduna la sempre dio che."
+                            .text
+                            .color(MyTheme.darkBluishColor)
+                            .make()
+                            .p16()
                       ],
                     ).py64(),
                   ),
