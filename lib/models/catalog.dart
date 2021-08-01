@@ -1,12 +1,12 @@
-class CatalogModal {
+class CatalogModel {
   static List<Item> items = [];
 
   //Get Item By ID
-  static Item getById(int id) =>
+  Item getById(int id) =>
       items.firstWhere((element) => element.id == id, orElse: null);
 
   //Get Item by Position
-  static Item getByPosition(int pos) => items[pos];
+  Item getByPosition(int pos) => items[pos];
   // [
   //   Item(
   //       id: 1,
@@ -20,7 +20,7 @@ class CatalogModal {
 }
 
 class Item {
-  final int? id;
+  final int id;
   final String name;
   final String desc;
   final num price;
@@ -28,7 +28,7 @@ class Item {
   final String image;
 
   Item(
-      {this.id,
+      {required this.id,
       required this.name,
       required this.desc,
       required this.price,

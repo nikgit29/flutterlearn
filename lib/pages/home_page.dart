@@ -28,16 +28,16 @@ class _HomePageState extends State<HomePage> {
     var productsData = decodeData["products"];
     // print(productsData);
     //return;
-    CatalogModal.items = List.from(productsData)
+    CatalogModel.items = List.from(productsData)
         .map<Item>((item) => Item.fromMap(item))
         .toList();
-    print(CatalogModal.items.length);
+    print(CatalogModel.items.length);
     setState(() {});
   }
 
   @override
   Widget build(BuildContext context) {
-    // final dummyList = List.generate(4, (index) => CatalogModal.items[0]);
+    // final dummyList = List.generate(4, (index) => CatalogModel.items[0]);
     return Scaffold(
       backgroundColor: context.canvasColor,
       floatingActionButton: FloatingActionButton(
@@ -55,7 +55,7 @@ class _HomePageState extends State<HomePage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               CatalogHeader(),
-              if (CatalogModal.items.isNotEmpty)
+              if (CatalogModel.items.isNotEmpty)
                 CatalogList().py16().expand()
               else
                 CircularProgressIndicator().centered().expand(),
