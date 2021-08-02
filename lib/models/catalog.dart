@@ -1,8 +1,4 @@
 class CatalogModel {
-  static final catModel = CatalogModel._interval();
-  CatalogModel._interval();
-  factory CatalogModel() => catModel;
-
   static List<Item> items = [];
 
   //Get Item By ID
